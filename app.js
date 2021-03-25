@@ -11,5 +11,16 @@ const throwButton = document.getElementById('throw-button-div');
 const resetButton = document.getElementById('reset-button-div');
 
 throwButton.addEventListener('click', () => {
-    computerChoiceEl.textContent = getRandomThrow();
+    // make computer choose rock, paper, or scissors
+     let computerChoice = getRandomThrow();
+    // next, grab the user choice from the radio buttons
+    const selectedChoice = document.querySelector('input[type=radio]:checked');
+    let userChoice = selectedChoice.value;
+
+    // calculate if user won with a function
+
+    //update DOM
+    // computerChoiceEl.textContent
+
+
 });
