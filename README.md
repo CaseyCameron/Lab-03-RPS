@@ -21,8 +21,10 @@
     -<input name="symbol" type="radio" value="paper" />
     -<input name="symbol" type="radio" value="scissors" />
     Link them to app.js
+    -Create variables to store the wins and draws
 
 ### Functions
     - create getRandomThrow(), generating either rock, paper, or scissors and returning that string
     - create didUserWin(user, computer), accepting the user and computer guess
     returning win, lose, or draw
+    -Update DOM elements with win results
