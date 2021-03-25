@@ -30,6 +30,9 @@ throwButton.addEventListener('click', () => {
     let result = didUserWin(userChoice, computerChoice);
 
     //update DOM with result using an if statement
+    userChoiceEl.textContent = selectedChoice.value;
+    computerChoiceEl.textContent = computerChoice;
+
     if (result === 'win'){
         resultsEL.textContent = 'You win!';
         winsEl.textContent = 'Wins: ' + gameTally.wins++;
