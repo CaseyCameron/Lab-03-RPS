@@ -13,9 +13,16 @@
 12) r3 c1 3 radio buttons R, P, S
 13) r3 c2 throw-button
 14) r3 c3 reset-button
+-Link changeables to app.js
 
 ### Setup
     -Create the radio buttons
     -<input name="symbol" type="radio" value="rock" checked/>
     -<input name="symbol" type="radio" value="paper" />
     -<input name="symbol" type="radio" value="scissors" />
+    Link them to app.js
+
+### Functions
+    - create getRandomThrow(), generating either rock, paper, or scissors and returning that string
+    - create didUserWin(user, computer), accepting the user and computer guess
+    returning win, lose, or draw
