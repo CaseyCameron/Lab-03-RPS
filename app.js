@@ -11,7 +11,8 @@ const lossesEl = document.getElementById('losses-div');
 const drawsEl = document.getElementById('draws-div');
 const throwButton = document.getElementById('throw-button-div');
 const resetButton = document.getElementById('reset-button-div');
-let resetTally = document.getElementById('reset-tally-div');
+const resetTally = document.getElementById('reset-tally-div');
+let resetCounter = 1;
 
 let gameTally = {
     wins: 1,
@@ -29,8 +30,6 @@ throwButton.addEventListener('click', () => {
 
     userChoiceEl.textContent = selectedChoice.value;
     computerChoiceEl.textContent = computerChoice;
-
-    console.log(computerImageEl.src, computerChoice);
 
     // change the user image (refactor later)
     if (selectedChoice.value === 'rock'){
@@ -87,7 +86,9 @@ resetButton.addEventListener('click', () => {
     lossesEl.textContent = 'Losses: 0';
     drawsEl.textContent = 'Draws: 0';
     
-    let resetCounter = 1;
-    resetTally.textContent = 'Reset tally: ';
-    resetTally.value = resetCounter++;
+    resetTally.textContent = 'Reset tally: ' + resetCounter++;
+
+    userImageEl.src = '';
+    computerImageEl.src = '';
+
 });

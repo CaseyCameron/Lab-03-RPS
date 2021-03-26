@@ -1,7 +1,8 @@
 
 body {
     font-family: 'Titillium Web', sans-serif;
-    /*background-color: hsl(243, 18%, 24%); */
+    background-color: hsl(243, 18%, 24%);
+    color: white;
 }
 
 .main-section{
@@ -12,11 +13,26 @@ body {
     align-items: center;
     text-align: center;
     border: 1px solid black;
+    box-shadow: 5px 5px 5px black;
+
 }
 
 header {
     display: flex;
     justify-content: center;
+    box-shadow: 5px 5px 5px black;
+}
+
+#computer-choice-div{
+    font-weight: bold;
+    font-size: larger;
+}
+
+
+#user-choice-div{
+    font-weight: bold;
+    font-size: larger;
+
 }
 
 h1 {
@@ -24,4 +40,26 @@ h1 {
     font-weight: bold;
 }
   
+#throw-button-div{
+    border: none;
+    font-weight: bold;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 15px;
+    border-left: none;
+    border-right: none;
+}
 
+#reset-button-div{
+        border: none;
+        font-weight: bold;
+        padding: 5px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        border-radius: 15px;
+        border-left: none;
+        border-right: none;
+}
