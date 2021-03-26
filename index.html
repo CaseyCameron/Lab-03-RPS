@@ -27,14 +27,14 @@
                 Press reset to clear all.
             </div>
             <div id="computer-choice-div">Computer Choice</div>
-            <div id="user-choice-image">User Choice Image</div>
+            <div id="user-choice-image"><img id="user-image" src=""></div>
             <section class="tally-section">
                 <div id="results-div">Results</div>
                 <div id="wins-div">Wins: 0</div>
                 <div id="losses-div">Losses: 0</div>
                 <div id="draws-div">Draws: 0</div>
             </section>
-            <div id="computer-choice-image">Computer Choice Image</div>
+            <div id="computer-choice-image"><img id="computer-image" src=""></div>
             <section id="radio-buttons-div">
                 <label for="rock">
                     Rock
@@ -49,8 +49,13 @@
                     <input name="symbol" type="radio" ir="scissors" value="scissors" />
                 </label>
             </section>
-            <button id="throw-button-div">Throw Button</button>
-            <button id="reset-button-div">Reset Button</button>
+            <div>
+                <button id="throw-button-div">Throw Button</button>
+            </div>
+            <div>
+                <button id="reset-button-div">Reset Button</button>
+            </div>
+            <div id="reset-tally-div"></div>
         </section>
     </main>
 

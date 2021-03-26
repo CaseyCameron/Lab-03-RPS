@@ -1,21 +1,24 @@
 import { getRandomThrow, didUserWin } from './utils.js';
 
+
 const userChoiceEl = document.getElementById('user-choice-div');
 const computerChoiceEl = document.getElementById('computer-choice-div');
-const userImageEl = document.getElementById('user-choice-image');
-const computerImageEl = document.getElementById('computer-choice-image');
+const userImageEl = document.getElementById('user-image');
+const computerImageEl = document.getElementById('computer-image');
 const resultsEL = document.getElementById('results-div');
 const winsEl = document.getElementById('wins-div');
 const lossesEl = document.getElementById('losses-div');
 const drawsEl = document.getElementById('draws-div');
 const throwButton = document.getElementById('throw-button-div');
 const resetButton = document.getElementById('reset-button-div');
+let resetTally = document.getElementById('reset-tally-div');
 
 let gameTally = {
     wins: 1,
     losses: 1,
     draws: 1,
 };
+
 
 throwButton.addEventListener('click', () => {
     let computerChoice = getRandomThrow();
@@ -26,6 +29,32 @@ throwButton.addEventListener('click', () => {
 
     userChoiceEl.textContent = selectedChoice.value;
     computerChoiceEl.textContent = computerChoice;
+
+    console.log(computerImageEl.src, computerChoice);
+
+    // change the user image (refactor later)
+    if (selectedChoice.value === 'rock'){
+        userImageEl.src = './assets/' + selectedChoice.value + '.png';
+    }
+    if (selectedChoice.value === 'paper'){
+        userImageEl.src = './assets/' + selectedChoice.value + '.png';
+    }
+    if (selectedChoice.value === 'scissors'){
+        userImageEl.src = './assets/' + selectedChoice.value + '.png';
+    }
+
+    // change the computer image (refactor later)
+    if (computerChoice === 'rock'){
+        computerImageEl.src = './assets/' + computerChoice + '.png';
+    }
+    if (computerChoice === 'paper'){
+        computerImageEl.src = './assets/' + computerChoice + '.png';
+    }
+    if (computerChoice === 'scissors'){
+        computerImageEl.src = './assets/' + computerChoice + '.png';
+    }
+
+    
 
     if (result === 'win'){
         resultsEL.textContent = 'You win!';
@@ -57,5 +86,8 @@ resetButton.addEventListener('click', () => {
     winsEl.textContent = 'Wins: 0';
     lossesEl.textContent = 'Losses: 0';
     drawsEl.textContent = 'Draws: 0';
-    //reset radio button to rock
+    
+    let resetCounter = 1;
+    resetTally.textContent = 'Reset tally: ';
+    resetTally.value = resetCounter++;
 });
