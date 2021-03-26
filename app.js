@@ -1,37 +1,60 @@
 import { getRandomThrow, didUserWin } from './utils.js';
 
+
 const userChoiceEl = document.getElementById('user-choice-div');
-let computerChoiceEl = document.getElementById('computer-choice-div');
-const userImageEl = document.getElementById('user-choice-image');
-const computerImageEl = document.getElementById('computer-choice-image');
+const computerChoiceEl = document.getElementById('computer-choice-div');
+const userImageEl = document.getElementById('user-image');
+const computerImageEl = document.getElementById('computer-image');
 const resultsEL = document.getElementById('results-div');
 const winsEl = document.getElementById('wins-div');
 const lossesEl = document.getElementById('losses-div');
 const drawsEl = document.getElementById('draws-div');
 const throwButton = document.getElementById('throw-button-div');
 const resetButton = document.getElementById('reset-button-div');
+let resetTally = document.getElementById('reset-tally-div');
 
 let gameTally = {
-    wins: 0,
-    losses: 0,
-    draws: 0,
+    wins: 1,
+    losses: 1,
+    draws: 1,
 };
 
-throwButton.addEventListener('click', () => {
-    //reset resultsEl.textContent to default value
 
-    // make computer choose rock, paper, or scissors
+throwButton.addEventListener('click', () => {
     let computerChoice = getRandomThrow();
-    // next, grab the user choice from the radio buttons
     const selectedChoice = document.querySelector('input[type=radio]:checked');
     let userChoice = selectedChoice.value;
 
-    // calculate if user won with a function, 
     let result = didUserWin(userChoice, computerChoice);
 
-    //update DOM with result using an if statement
     userChoiceEl.textContent = selectedChoice.value;
     computerChoiceEl.textContent = computerChoice;
+
+    console.log(computerImageEl.src, computerChoice);
+
+    // change the user image (refactor later)
+    if (selectedChoice.value === 'rock'){
+        userImageEl.src = './assets/' + selectedChoice.value + '.png';
+    }
+    if (selectedChoice.value === 'paper'){
+        userImageEl.src = './assets/' + selectedChoice.value + '.png';
+    }
+    if (selectedChoice.value === 'scissors'){
+        userImageEl.src = './assets/' + selectedChoice.value + '.png';
+    }
+
+    // change the computer image (refactor later)
+    if (computerChoice === 'rock'){
+        computerImageEl.src = './assets/' + computerChoice + '.png';
+    }
+    if (computerChoice === 'paper'){
+        computerImageEl.src = './assets/' + computerChoice + '.png';
+    }
+    if (computerChoice === 'scissors'){
+        computerImageEl.src = './assets/' + computerChoice + '.png';
+    }
+
+    
 
     if (result === 'win'){
         resultsEL.textContent = 'You win!';
@@ -45,4 +68,26 @@ throwButton.addEventListener('click', () => {
         resultsEL.textContent = 'You lose.';
         lossesEl.textContent = 'Losses: ' + gameTally.losses++;
     }
+});
+
+resetButton.addEventListener('click', () => {
+    //reset gameTally, user choice div, comp choice div, user choice img, comp choice img, results div
+    gameTally = {
+        wins: 1,
+        losses: 1,
+        draws: 1,
+    };
+
+    userChoiceEl.textContent = 'User Choice';
+    computerChoiceEl.textContent = 'Computer Choice';
+    userImageEl.textContent = '';
+    computerImageEl.textContent = '';
+    resultsEL.textContent = 'Results';
+    winsEl.textContent = 'Wins: 0';
+    lossesEl.textContent = 'Losses: 0';
+    drawsEl.textContent = 'Draws: 0';
+    
+    let resetCounter = 1;
+    resetTally.textContent = 'Reset tally: ';
+    resetTally.value = resetCounter++;
 });

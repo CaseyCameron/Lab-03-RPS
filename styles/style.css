@@ -1,12 +1,13 @@
 
 body {
     font-family: 'Titillium Web', sans-serif;
+    /*background-color: hsl(243, 18%, 24%); */
 }
 
 .main-section{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -23,3 +24,4 @@ h1 {
     font-weight: bold;
 }
   
+
