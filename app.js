@@ -20,7 +20,6 @@ let gameTally = {
     draws: 1,
 };
 
-
 throwButton.addEventListener('click', () => {
     let computerChoice = getRandomThrow();
     const selectedChoice = document.querySelector('input[type=radio]:checked');
@@ -52,8 +51,6 @@ throwButton.addEventListener('click', () => {
     if (computerChoice === 'scissors'){
         computerImageEl.src = './assets/' + computerChoice + '.png';
     }
-
-    
 
     if (result === 'win'){
         resultsEL.textContent = 'You win!';
@@ -90,5 +87,4 @@ resetButton.addEventListener('click', () => {
 
     userImageEl.src = '';
     computerImageEl.src = '';
-
 });
