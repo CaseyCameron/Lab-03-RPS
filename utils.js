@@ -26,15 +26,3 @@ export function didUserWin(userChoice, computerChoice){
         return 'win';
     else return 'error';
 }
-
-// export function changeUserImage(selectedChoice, userImageEl){
-//     if (selectedChoice.value === 'rock'){
-//         return userImageEl.src = './assets/' + selectedChoice.value + '.png';
-//     }
-//     if (selectedChoice.value === 'paper'){
-//         return userImageEl.src = './assets/' + selectedChoice.value + '.png';
-//     }
-//     if (selectedChoice.value === 'scissors'){
-//         return userImageEl.src = './assets/' + selectedChoice.value + '.png';
-//     }
-// }
